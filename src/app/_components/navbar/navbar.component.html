@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="../../../assets/logo.png" alt="Evo Systems Logo" />
+  </div>
+  <div class="navbar-links">
+    <button class="nav-button" routerLink="/">Departamentos</button>
+    <button class="nav-button" routerLink="/funcionarios">Funcionários</button>
+  </div>
+  <div class="navbar-dropdown">
+    <button class="dropdown-button" (click)="toggleDropdown()">
+      Adicionar novo
+      <i class="bi bi-plus-circle-fill"></i>
+    </button>
+    <div class="dropdown-menu" [class.show]="isDropdownOpen">
+      <button class="dropdown-item" routerLink="/novo-departamento">
+        <i class="bi bi-building-fill-add"></i> Departamento
+      </button>
+      <button class="dropdown-item" routerLink="/novo-funcionario">
+        <i class="bi bi-person-fill-add"></i> Funcionário
+      </button>
+    </div>
+  </div>
+</nav>

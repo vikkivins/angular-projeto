@@ -1,0 +1,117 @@
+.search-bar {
+  margin: 40px 40px 40px 40px;
+  position: relative; /* Adicionado */
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Ajustado para dar espaço à lupa */
+  border: 2px solid #001f5b;
+  border-radius: 50px;
+}
+
+.bi-search {
+  color: #001f5b;
+  position: absolute; /* Adicionado */
+  left: 15px; /* Adicionado */
+  top: 50%; /* Adicionado */
+  transform: translateY(-50%); /* Adicionado */
+}
+
+.department-table {
+  width: calc(100% - 80px);
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.department-table th,
+.department-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.department-table th {
+  background-color: #f4f4f4;
+}
+
+.department-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.department-table td {
+  border-bottom: 1px solid #ddd;
+  border-radius: 50%;
+}
+
+button {
+  margin-right: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button i {
+  font-size: 16px;
+}
+
+.bi-tv {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #001f5b;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bi-tv:hover {
+  background-color: #fff; /* Cor ao passar o mouse */
+  color:#001f5b;
+  border: 2px solid #001f5b;
+}
+
+.bi-pencil-fill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #001f5b;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bi-pencil-fill:hover {
+  background-color: #fff; /* Cor ao passar o mouse */
+  color:#001f5b;
+  border: 2px solid #001f5b;
+}
+
+.bi-trash3-fill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(216, 0, 0);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bi-trash3-fill:hover {
+  background-color: #fff; /* Cor ao passar o mouse */
+  color:rgb(216, 0, 0);
+  border: 2px solid rgb(216, 0, 0);
+}

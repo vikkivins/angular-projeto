@@ -1,0 +1,50 @@
+<div *ngIf="departamentoId" class="department-header">
+  <h1>{{ departamentoNome }}</h1>
+</div>
+
+<div class="search-bar">
+  <i class="bi bi-search"></i>
+  <input
+    type="text"
+    placeholder="Busque um funcionário..."
+    [(ngModel)]="searchTerm"
+    (input)="filterFuncionarios()"
+  />
+</div>
+
+<div class="page-header">
+  <h2>
+    {{ departamentoNome ? 'Funcionários do ' + departamentoNome : 'Todos os Funcionários' }}
+  </h2>
+</div>
+
+<div class="employee-list">
+  <div *ngFor="let funcionario of funcionariosFiltrados" class="employee-card">
+    <div class="employee-photo">
+      <img
+        *ngIf="funcionario.foto"
+        [src]="'http://localhost:5232' + funcionario.foto"
+        alt="Foto do Funcionário"
+      />
+      <span *ngIf="!funcionario.foto">Sem Foto</span>
+    </div>
+    <div class="employee-details">
+      <p><strong>Nome:</strong> {{ funcionario.nome }}</p>
+      <p><strong>RG:</strong> {{ funcionario.rg }}</p>
+      <p><strong>Departamento:</strong> {{ funcionario.departamento.nome }}</p>
+    </div>
+    <div class="employee-actions">
+      <!-- Botão de editar redireciona para a página novo-funcionario com o funcionário selecionado -->
+      <button
+        title="Editar"
+        (click)="redirectToFuncionarioPage(funcionario)"
+      >
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+      <!-- Botão de excluir -->
+      <button title="Excluir" (click)="deleteFuncionario(funcionario.id)">
+        <i class="bi bi-trash3-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>

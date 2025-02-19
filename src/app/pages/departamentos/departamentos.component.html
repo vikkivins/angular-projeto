@@ -1,0 +1,46 @@
+<div class="search-bar">
+  <i class="bi bi-search"></i>
+  <input
+    type="text"
+    placeholder="Busque um departamento..."
+    [(ngModel)]="searchTerm"
+    (input)="filterDepartamentos()"
+  />
+</div>
+
+<!-- Botão para criar um novo departamento -->
+<div class="action-buttons">
+  <button class="btn btn-primary" (click)="redirectToDepartamentoPage()">Novo Departamento</button>
+</div>
+
+<table class="department-table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sigla</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let departamento of departamentosFiltrados">
+      <td>{{ departamento.nome }}</td>
+      <td>{{ departamento.sigla }}</td>
+      <td>
+        <!-- Redirecionamento para a página de funcionários do departamento -->
+        <button title="Visualizar" [routerLink]="['/funcionarios', departamento.id, departamento.nome]">
+          <i class="bi bi-tv"></i>
+        </button>
+
+        <!-- Redirecionamento para a página de edição de departamento -->
+        <button title="Editar" (click)="redirectToDepartamentoPage(departamento)">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <!-- Excluir departamento -->
+        <button title="Excluir" (click)="deleteDepartamento(departamento.id)">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
