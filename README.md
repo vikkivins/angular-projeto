@@ -1,3 +1,87 @@
+# Gerenciador de Funcionários - Frontend Angular
+
+![Angular](https://img.shields.io/badge/Angular-17.3.11-red?style=flat&logo=angular)
+
+Este projeto é o frontend Angular para o sistema de gerenciamento de funcionários e departamentos, desenvolvido para integrar com a API .NET Core.
+
+## ✨ Recursos
+
+- **Gerenciamento de Departamentos**
+  - Listagem, criação, edição e exclusão
+  - Visualização detalhada
+- **Gerenciamento de Funcionários**
+  - Cadastro com upload de foto
+  - Associação a departamentos
+  - Filtragem por departamento
+- **Interface Responsiva**
+  - Adaptável para diferentes tamanhos de tela
+- **Integração com API REST**
+  - Comunicação com backend .NET Core
+
+## 🚀 Começando
+
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- Angular CLI (versão 17.x)
+- API backend em execução (confira o repositório da API)
+
+### Instalação
+
+1. Clone o repositório
+   ```bash
+   git clone [URL_DO_REPOSITORIO]
+   ```
+
+2. Instale as dependências
+   ```bash
+   npm install
+   ```
+
+3. Configure a API
+   - Edite o arquivo `src/environments/environment.ts` para apontar para sua API:
+   ```typescript
+   export const environment = {
+     production: false,
+     apiUrl: 'https://localhost:5001/api' // URL da sua API
+   };
+   ```
+
+## 🛠 Comandos Úteis
+
+| Comando | Descrição |
+|---------|-----------|
+| `ng serve` | Inicia o servidor de desenvolvimento em `http://localhost:4200/` |
+| `ng build` | Compila o projeto para produção na pasta `dist/` |
+| `ng test` | Executa testes unitários via Karma |
+| `ng e2e` | Executa testes end-to-end (requer configuração adicional) |
+| `ng generate component nome-do-componente` | Cria um novo componente |
+
+## 🌐 Integração com a API
+
+O frontend consome os seguintes endpoints da API:
+
+- **Departamentos**
+  - `GET /api/Departamento`
+  - `POST /api/Departamento`
+  - `PUT /api/Departamento/{id}`
+  - `DELETE /api/Departamento/{id}`
+
+- **Funcionários**
+  - `GET /api/Funcionario`
+  - `POST /api/Funcionario`
+  - `PUT /api/Funcionario/{id}`
+  - `DELETE /api/Funcionario/{id}`
+  - `POST /api/Funcionario/upload` (upload de fotos)
+
+
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas!Sinta-se à vontade para abrir issues ou pull requests com melhorias ou correções.
+
+------------------------
+
 # Projeto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
